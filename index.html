@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cartoon Character</title>
+    <style>
+      html,
+      body {
+        overflow: hidden;
+        background-color: rgba(89, 163, 236, 0.533);
+        font-size: 23px;
+      }
+
+      .cartoon {
+        position: absolute;
+        bottom: 0%;
+        left: 50%;
+        transform: translate(-50%, 0%);
+        width: 80vmin;
+        height: 80vmin;
+      }
+
+      .cartoon div {
+        position: absolute;
+        box-sizing: border-box;
+      }
+      .b {
+        border: 0.5vmin solid;
+      }
+      .r {
+        border-radius: 100%;
+      }
+      .hb::before,
+      .ha::after {
+        content: "";
+        display: block;
+        position: absolute;
+        box-sizing: border-box;
+      }
+      .cartoon {
+        --skin: #fca;
+        --skin-dark: #fb9;
+        --cap-light: rgb(82, 47, 235);
+        --cap-dark: rgb(37, 35, 62);
+        --cap-lid: rgb(50, 45, 45);
+      }
+      .eyes {
+        width: 60%;
+        height: 60%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-image: linear-gradient(
+            transparent 30%,
+            var(--skin) 0 40%,
+            black 0 41.5%,
+            transparent 0
+          ),
+          radial-gradient(circle at 45% 50%, black 5%, transparent 0),
+          radial-gradient(circle at 75% 50%, black 4%, transparent 0),
+          radial-gradient(
+            circle at 35% 50%,
+            white 20%,
+            black 0 21.5%,
+            transparent 0
+          ),
+          radial-gradient(
+            circle at 65% 50%,
+            white 20%,
+            black 0 21.5%,
+            transparent 0
+          );
+        background-position: center center;
+        background-size: 61% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%,
+          100% 100%, 100% 100%, 100% 100%;
+        background-repeat: no-repeat;
+      }
+
+      .face {
+        width: 50%;
+        height: 60%;
+        background: var(--skin);
+        background-image: radial-gradient(
+          circle at 55% 100%,
+          rgba(0, 0, 0, 0.1) 44%,
+          transparent 0
+        );
+        border: 0.75vmin solid;
+        border-bottom: 1vmin solid;
+        border-top-color: var(--skin);
+        border-left: 0.1vmin solid var(--skin);
+        border-radius: 100%/120% 120% 80% 80%;
+        transform: translate(-50%, 0) rotate(-15deg);
+        left: 45%;
+        top: 33%;
+      }
+      .nose {
+        width: 15%;
+        height: 10%;
+        background: var(--skin);
+        background-image: linear-gradient(
+          to right,
+          transparent,
+          var(--skin-dark)
+        );
+        border: 0.66vmin solid;
+        border-right: 0.75vmin solid;
+        border-left: 0.5vmin solid var(--skin);
+        border-radius: 120% 80% 90% 100%/ 100%;
+        top: 53%;
+        left: 48%;
+        transform: rotate(-15deg);
+      }
+      .ear {
+        width: 20%;
+        height: 30%;
+        border-radius: 100% /80% 80% 120% 125%;
+        border: 0.75vmin solid;
+        border-right: 1.125vmin solid var(--skin);
+        border-left: 1.1vmin solid;
+        background: var(--skin);
+        top: 50%;
+        left: 5%;
+        transform: rotate(-12deg);
+      }
+      .ear::before {
+        width: 70%;
+        height: 60%;
+        border: 1.25vmin solid transparent;
+        border-top: 0.75vmin solid;
+        border-right: 0.5vmin solid;
+        border-radius: 50%;
+        top: 22%;
+        right: 15%;
+        box-shadow: inset -1.5vmin 2vmin 0 -0.5vmin var(--skin-dark);
+      }
+      .ear::after {
+        width: 30%;
+        height: 20%;
+        border: 0.75vmin solid;
+        border-bottom: 0.25vmin solid transparent;
+        border-right: 0.75vmin solid transparent;
+        border-radius: 50%;
+        right: 17%;
+        top: 55%;
+        transform: rotate(30deg);
+        box-shadow: -2vmin -1vmin 0 0.5vmin var(--skin-dark);
+      }
+      .ear.ear-back {
+        border-left: 0.75vmin solid;
+        transform: scaleX(-1) rotate(-10deg);
+        left: 52%;
+        top: 46%;
+        background-image: linear-gradient(
+          to right,
+          transparent,
+          var(--skin-dark) 20%
+        );
+      }
+      .neck {
+        width: 30%;
+        height: 25%;
+        background: var(--skin);
+        border-left: 1vmin solid;
+        border-right: 0.75vmin solid;
+        top: 75%;
+        left: 20%;
+        background-image: radial-gradient(
+          circle at 83% 25%,
+          #fb9 55%,
+          transparent 0
+        );
+      }
+      .forehead {
+        width: 57%;
+        height: 60%;
+        background: var(--skin);
+        border: 0.75vmin solid;
+        border-radius: 50%;
+        left: 12.5%;
+        top: 13.5%;
+      }
+      .mouth {
+        width: 30%;
+        height: 20%;
+        border: 1.25vmin solid transparent;
+        border-bottom: 0.5vmin solid;
+        border-right: 0.5vmin solid transparent;
+        border-radius: 50%;
+        top: 56%;
+        left: 37%;
+        transform: rotate(10deg);
+      }
+      .mouth::after {
+        width: 20%;
+        height: 30%;
+        border: 00.25vmin solid transparent;
+        border-left: 00.75vmin solid;
+        border-radius: 50%;
+        top: 80%;
+        left: 15%;
+        transform: rotate(15deg);
+      }
+      .cap {
+        width: 85%;
+        height: 20%;
+        border: 0.75vmin solid;
+        border-radius: 127% 131% 175% 104%/ 105%;
+        transform: rotate(-25deg);
+        top: 31.5%;
+        left: 5%;
+        border-left: 1.5vmin solid transparent;
+        border-right: 1.25vmin solid;
+        border-bottom: 0.125vmin solid transparent;
+      }
+
+      .cap-lid {
+        background: rgb(100, 98, 104);
+        border-right: 1.25vmin solid;
+        border: bottom 0.5vmin solid;
+      }
+      .cap-top {
+        width: 60%;
+        height: 35.4%;
+        border: 0.75vmin solid;
+        border-radius: 120% 100% 0 0;
+        border-bottom: 0vmin solid transparent;
+        transform: rotate(-26deg);
+        top: 4%;
+        left: 0.5%;
+        background-image: linear-gradient(
+            var(--cap-light),
+            var(--cap-dark) 95.07%,
+            transparent 0
+          ),
+          linear-gradient(5deg, transparent 15.5%, var(--cap-dark) 0),
+          linear-gradient(-10deg, transparent 22%, var(--cap-dark) 0);
+      }
+      .eyebrow {
+        width: 25%;
+        height: 25%;
+        border-radius: 100%/ 50%;
+        box-shadow: 1vmin -4vmin 0 -1.75vmin;
+        transform: rotate(-15deg);
+        top: 38%;
+        left: 27%;
+      }
+      .eyebrow + .eyebrow {
+        transform: scaleX(-1) rotate(-12deg);
+        left: 48%;
+        top: 37%;
+        width: 23%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cartoon hb show-cap">
+      <div class="cap cap-lid"></div>
+      <div class="ear ear-back"></div>
+      <div class="neck"></div>
+      <div class="forehead"></div>
+      <div class="face"></div>
+      <div class="eyes"></div>
+      <div class="nose"></div>
+      <div class="mouth ha"></div>
+      <div class="eyebrow"></div>
+      <div class="eyebrow"></div>
+      <div class="cap-top"></div>
+      <div class="ear ha hb"></div>
+      <div class="cap"></div>
+    </div>
+    <p>
+      <i
+        >Hello Everyone, I have made this cartoon Character with the help of css
+        and html . I took help from Alvaro Montaro Youtube channel. <br />
+        Thank you very much 💖
+      </i>
+    </p>
+  </body>
+</html>
